@@ -1,0 +1,19 @@
+body {
+    font-family: consolas;
+    width: 75%;
+    padding-left: 25px;
+}
+.name{
+    text-decoration: underline;
+}
+.address{
+    font-style: italic;
+}
+.img{
+    padding-left: 25px;
+    padding-top 10px;
+    padding-bottom:10px;
+}
+img{
+    width: 50%;
+}
