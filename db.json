@@ -5,7 +5,7 @@
       "name": "Vedge",
       "address": "1221 Locust St, Philadelphia, PA 19107",
       "imgUrl": "https://s3-media0.fl.yelpcdn.com/bphoto/TMFHugi3h9V7x-fDBFTpgA/o.jpg"
-    }
+    },
     {
       "id": 2,
       "name": "Royal Susih and Izakaya",
@@ -25,25 +25,25 @@
       "restaurantId": 1,
       "stars": 2,
       "text": "I didn't know they meant vedge literally"
-    }
+    },
     {
       "id": 3,
       "restaurantId": 1,
       "stars": 1,
       "text": "Everything tasted like dirt. Blech"
-    }
+    },
     {
       "id": 4,
       "restaurantId": 2,
       "stars": 1,
       "text": "The fish was raw."
-    }
+    },
     {
       "id": 5,
       "restaurantId": 2,
       "stars": 5,
       "text": "The chef's tasting is worth every penny and the late night watchign of the reservation system. Can't wait to do it again."
-    }
+    },
     {
       "id": 6,
       "restaurantId": 2,
