@@ -7,7 +7,7 @@ Create a web application that shows a list of restaurants from your database and
 
 Core requirements:
 
-[ ]1. Populate the page with restaurants from your local database, showing the name, address, an image, and the average review score. For instance, if there are 2 reviews on a restaurant, one for 4 stars and one for 3 stars, the average review score should be 3.5. Use .map(). 
+[x]1. Populate the page with restaurants from your local database, showing the name, address, an image, and the average review score. For instance, if there are 2 reviews on a restaurant, one for 4 stars and one for 3 stars, the average review score should be 3.5. Use .map(). 
 
 [ ]2. Show the reviews from your local database below each restaurant, showing the text and star rating. Use .filter() and .map().
 
@@ -32,3 +32,7 @@ Grading criteria:
 4. Use GitHub and make a new branch for each numbered task, so at least 5 branches total. Give the branch a meaningful name using this convention: feature/show-restaurants. Merge the feature branch into your main branch when you complete the task. 
 5. Do not have any extraneous comments beyond explanations of code (if needed) in your final result. Do not have any console.logs, in comments or otherwise.
 6. CSS is not necessary and will not be graded but is encouraged for the sake of practice.
+
+cmd to start the json server
+
+json-server --watch db.json
