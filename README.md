@@ -9,9 +9,9 @@ Core requirements:
 
 [x]1. Populate the page with restaurants from your local database, showing the name, address, an image, and the average review score. For instance, if there are 2 reviews on a restaurant, one for 4 stars and one for 3 stars, the average review score should be 3.5. Use .map(). 
 
-[ ]2. Show the reviews from your local database below each restaurant, showing the text and star rating. Use .filter() and .map().
+[x]2. Show the reviews from your local database below each restaurant, showing the text and star rating. Use .filter() and .map().
 
-[ ]3. Sort the restaurants from highest-rated to lowest-rated. Use .sort().
+[x]3. Sort the restaurants from highest-rated to lowest-rated. Use .sort().
 
 [ ]4. Create a form that allows the user to write a new review and give a star rating. When the user submits the form the new review should show up on the page WITHOUT reloading the page.
 
