@@ -16,22 +16,34 @@ const getReviews = async()=>{
 
 
 const displayResturants = (resturants,reviews)=>{
+    
     const result = document.querySelector(".results");
+
     
-    
-    const resturantPost = resturants.map(resturant=>{
-        const resturantReviews = reviews.filter(review => {
-            return review.restaurantId == resturant.id
-        });
-        console.log(resturantReviews);
-               const ratings = resturantReviews.map(review => review.stars);
-       console.log(ratings);
-        const avgRating = ratings.reduce((a,b) => a + b, 0) / ratings.length;
-        console.log(avgRating);
-         return `<div class ="resturant"><div class ="name"><h1>${resturant.name}</h1></div><div class ="rating">Avg Stars:${avgRating.toFixed(1)}</div><div class ="address"> Address: ${resturant.address}</div><div class ="img"><img src ="${resturant.imgUrl}"></div></div>`;
+    const resturantPosts = resturants.map(resturant=>{
+        
+            const resturantReviews = reviews.filter(review => {
+                return review.restaurantId == resturant.id
+            });
+            const reviewDivs = resturantReviews.map((review)=>{
+                    return `<div class ="review"><div class ="rating">Stars:${review.stars}</div><div class="reviewText">Review:${review.text}</div></div>`
+                });
+
+            const ratings = resturantReviews.map(review => review.stars);
+        
+            const avgRating = ratings.reduce((a,b) => a + b, 0) / ratings.length;
+        
+         return `<div class ="resturant">
+<div class ="name"><h1>${resturant.name}</h1></div>
+<div class ="rating">Avg Stars:${avgRating.toFixed(1)}</div
+div class ="address"> Address: ${resturant.address}</div>
+<div class ="img"><img src ="${resturant.imgUrl}"></div>
+<div class ="reviewsContainer">${reviewDivs.join("")}</div>
+</div>`;
     });
-    result.innerHTML += resturantPost.join("");
     
+    result.innerHTML += resturantPosts.join("");
+
 };
 
 const showReviews = async ()=>{
