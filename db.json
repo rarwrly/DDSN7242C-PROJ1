@@ -55,6 +55,30 @@
       "restaurantId": 2,
       "stars": 5,
       "text": "I'd be happy eating the rice everyday."
+    },
+    {
+      "restaurantId": 2,
+      "stars": 4,
+      "text": "sakjsakjsakjhsakjh",
+      "id": 8
+    },
+    {
+      "restaurantId": 2,
+      "stars": 4,
+      "text": "fffffffff",
+      "id": 9
+    },
+    {
+      "restaurantId": 2,
+      "stars": 1,
+      "text": "blah, smelled bad",
+      "id": 10
+    },
+    {
+      "restaurantId": 1,
+      "stars": 5,
+      "text": "veggies are awesome!",
+      "id": 11
     }
   ]
 }
