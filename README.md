@@ -13,7 +13,7 @@ Core requirements:
 
 [x]3. Sort the restaurants from highest-rated to lowest-rated. Use .sort().
 
-[ ]4. Create a form that allows the user to write a new review and give a star rating. When the user submits the form the new review should show up on the page WITHOUT reloading the page.
+[x]4. Create a form that allows the user to write a new review and give a star rating. When the user submits the form the new review should show up on the page WITHOUT reloading the page.
 
 Complete at least one of the following requirements then complete as many others as possible in whichever order you'd like.
 

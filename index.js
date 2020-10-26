@@ -26,7 +26,9 @@ const displayResturants = (resturants,reviews)=>{
                 return review.restaurantId == resturant.id
             });
             const reviewDivs = resturantReviews.map((review)=>{
-                    return `<div class ="review"><div class ="rating">Stars:${review.stars}</div><div class="reviewText">Review:${review.text}</div></div>`
+                    return `<div class ="review"><div class ="rating">Stars:${review.stars}</div><div class="reviewText">Review:${review.text}</div>
+                    <input type="button" onclick="deleteReview('${review.id}')" value="Delete">
+                    </div>`
                 });
            const form = document.createElement("div");
                 form.classList.add("formContianer")
@@ -55,6 +57,9 @@ resturantPosts.forEach (resturant=>{
 });
 };
 
+/* delting a review
+create delet button that has an onClick function that passses the Review ID
+create a const deleteReview that asycn takes the reviewID  adn then usese it to delete it*/
 function createReviewFromForm(formId){
     const formDetails= document.getElementById(formId)
     const formData= new FormData(formDetails)
@@ -85,7 +90,20 @@ const createReview = async (newReview) => {
       "Content-Type": "application/json",
     },
   });
-      console.log("success");
+      console.log("success - new review posted");
+    showReviews();
+};
+
+const deleteReview = async (reviewId) => {
+  // POST request - create a record in a database
+  await fetch(`http://localhost:3000/reviews/${reviewId}`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+      console.log("success - review deleted");
     showReviews();
 };
 
