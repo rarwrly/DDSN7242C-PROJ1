@@ -14,8 +14,17 @@ const getReviews = async()=>{
     return reviews;
 };
 
+const getUsers = async() =>{
+    const response = await fetch(
+        'http://localhost:3000/users'
+    );
+    const users = await response.json();
+    return users;
+}
 
-const displayResturants = (resturants,reviews)=>{
+
+
+const displayResturants = (resturants,reviews,users)=>{
     
     const result = document.querySelector(".results");
     result.innerHTML =""
@@ -25,14 +34,26 @@ const displayResturants = (resturants,reviews)=>{
             const resturantReviews = reviews.filter(review => {
                 return review.restaurantId == resturant.id
             });
+        /*
+            reviews.forEach((review)=>{
+            const user = users.find((user)=>{
+                        return user.id === review.userId;
+                    });
+            });
+        */
+                        //<div class="user"> Username:${user.name}</div>
             const reviewDivs = resturantReviews.map((review)=>{
-                    return `<div class ="review"><div class ="rating">Stars:${review.stars}</div><div class="reviewText">Review:${review.text}</div>
-                    <input type="button" onclick="deleteReview('${review.id}')" value="Delete">
+                    return `<div class ="review">
+                        <div class ="rating">Stars:${review.stars}</div>
+                        <div class="reviewText">Review:${review.text}</div>
+
+                        <input type="button" onclick="deleteReview('${review.id}')" value="Delete">
                     </div>`
                 });
            const form = document.createElement("div");
                 form.classList.add("formContianer")
                 form.innerHTML+=`
+                <p> Add your own Review</p>
                 <form id ="formId_${resturant.id}">
                 <input type="hidden" name ="resturantId" value="${resturant.id}">
                 Rating: <input type="text" name="rating"><br>
@@ -43,11 +64,13 @@ const displayResturants = (resturants,reviews)=>{
             const resturantContainer = document.createElement("div");
                 resturantContainer.classList.add("resturantContainer");
                 resturantContainer.innerHTML += `
+                    <div class = "resturant" onclick="showReviews('resturantId_${resturant.id}')">
                     <div class ="name"><h1>${resturant.name}</h1></div>
                     <div class ="rating">Avg Stars:${resturant.avgRating}</div>
                     <div class ="address"> Address: ${resturant.address}</div>
                     <div class ="img"><img src ="${resturant.imgUrl}"></div>
-                    <div class ="reviewsContainer" id ="resturantId_${resturant.id}">${reviewDivs.join("")}</div>`;
+                    <div class ="reviewsContainer" id ="resturantId_${resturant.id}">${reviewDivs.join("")}</div>
+                    </div>`;
                 resturantContainer.append(form);
          return resturantContainer;
     });
@@ -81,7 +104,6 @@ function createReviewFromForm(formId){
 };
     
 const createReview = async (newReview) => {
-  // POST request - create a record in a database
   await fetch("http://localhost:3000/reviews", {
     method: "POST",
     body: JSON.stringify(newReview),
@@ -94,8 +116,16 @@ const createReview = async (newReview) => {
     showReviews();
 };
 
+//const showReview = (resturantId)=>
+
+//displayReviews.addEventListener("click",()=>{
+// check if active class is applied to any other review, if yes then set to inactice
+// if the resturant_Id contains the resturantId 
+// element.classList.remove("inactive");
+//  element.classList.add("active");
+//});
+
 const deleteReview = async (reviewId) => {
-  // POST request - create a record in a database
   await fetch(`http://localhost:3000/reviews/${reviewId}`, {
     method: "DELETE",
     headers: {
@@ -108,18 +138,11 @@ const deleteReview = async (reviewId) => {
 };
 
 
-
-//displayReviews.addEventListener("click",()=>{
-// check if active class is applied to any other review, if yes then set to inactice
-// if the resturant_Id contains the resturantId 
-// element.classList.remove("inactive");
-//  element.classList.add("active");
-//});
-
 const showReviews = async ()=>{
     try{
         const resturants = await getResturants();
         const reviews = await getReviews();
+        const users = await getUsers();
         
         resturants.forEach((resturant)=>{
             const resturantReviews = reviews.filter(review => {
@@ -132,7 +155,7 @@ const showReviews = async ()=>{
         });
         resturants.sort((a,b)=>b.avgRating -a.avgRating)
         
-        displayResturants(resturants,reviews);
+        displayResturants(resturants,reviews,users);
     }catch(error){
         document.body.innerHTML =`HerpDerp apologies, a snake got in the server room and caused an error:${error}`;
     }

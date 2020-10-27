@@ -13,10 +13,21 @@
       "imgUrl": "https://s3-media0.fl.yelpcdn.com/bphoto/jqcSNWnnfHOUBocUBIED3A/o.jpg"
     }
   ],
+"users":[
+    {
+      "id": 1,
+      "name": "chonk_bear"
+    },
+    {
+      "id": 1,
+      "name": "HerpsNotDerps"
+    }
+],
   "reviews": [
     {
       "id": 1,
       "restaurantId": 1,
+      "userId":2,
       "stars": 5,
       "text": "Impossibly good vegan food"
     },
@@ -41,6 +52,7 @@
     {
       "id": 5,
       "restaurantId": 2,
+      "userId":1,
       "stars": 5,
       "text": "The chef's tasting is worth every penny and the late night watching of the reservation system. Can't wait to do it again."
     },
@@ -53,6 +65,7 @@
     {
       "id": 7,
       "restaurantId": 2,
+      "userId":2,
       "stars": 5,
       "text": "I'd be happy eating the rice everyday."
     },
