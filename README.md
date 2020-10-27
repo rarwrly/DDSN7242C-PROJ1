@@ -23,7 +23,7 @@ Complete at least one of the following requirements then complete as many others
 
 [x]3. Add the option to delete reviews, but not restaurants. Deleting a review should remove it from the database. After deleting, show the updated list of reviews WITHOUT reloading the page.
 
-[ ]4. Add users to the database. Associate them with reviews and show the user's details on the review. Use the .find() method to do so.
+[x]4. Add users to the database. Associate them with reviews and show the user's details on the review. Use the .find() method to do so.
 
 Grading criteria:
 1. Use the methods that are listed in each requirement.

@@ -36,3 +36,11 @@ input[type=text] {
   margin: 8px 0;
 
 }
+
+.visable{
+    display: block;
+}
+
+.hidden{
+    display:none;
+}
