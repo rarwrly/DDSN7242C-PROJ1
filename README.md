@@ -21,7 +21,7 @@ Complete at least one of the following requirements then complete as many others
 
 [ ]2. The reviews should only be shown below the restaurant after the user clicks a restaurant. Only one restaurant's reviews should be visible at a time.
 
-[ ]3. Add the option to delete reviews, but not restaurants. Deleting a review should remove it from the database. After deleting, show the updated list of reviews WITHOUT reloading the page.
+[x]3. Add the option to delete reviews, but not restaurants. Deleting a review should remove it from the database. After deleting, show the updated list of reviews WITHOUT reloading the page.
 
 [ ]4. Add users to the database. Associate them with reviews and show the user's details on the review. Use the .find() method to do so.
 
